@@ -1,4 +1,5 @@
 import React from 'react'
+import FoodGallery from './FoodGallery'
 
 const Main = () => {
   return (
@@ -13,7 +14,7 @@ const Main = () => {
             class="col-12 col-md-6 text-white p-4"
             style={{ background: '#FFFBE9' }}
           >
-            
+            <FoodGallery/>
           </div>
         </div>
       </div>
