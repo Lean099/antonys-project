@@ -55,7 +55,7 @@ const Navbar = () => {
               <button type="button" class="btn mx-1 btn-dark">
                 Registrarse
               </button>
-              <button type="button" class="btn btn-dark position-relative">
+              <button type="button" class="btn btn-dark position-relative" data-bs-toggle="modal" data-bs-target="#exampleModalCart">
                 <i class="fas fa-shopping-cart"></i> Carrito
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   2<span class="visually-hidden">unread messages</span>
