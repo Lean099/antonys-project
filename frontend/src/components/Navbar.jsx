@@ -47,8 +47,7 @@ const Navbar = () => {
               <button
                 type="button"
                 class="btn btn-outline-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-toggle="modal" data-bs-target="#exampleModalLogin"
               >
                 Inicio de sesion
               </button>
