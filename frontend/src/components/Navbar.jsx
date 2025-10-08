@@ -51,7 +51,7 @@ const Navbar = () => {
               >
                 Inicio de sesion
               </button>
-              <button type="button" class="btn mx-1 btn-dark">
+              <button type="button" class="btn mx-1 btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalRegister">
                 Registrarse
               </button>
               <button type="button" class="btn btn-dark position-relative" data-bs-toggle="modal" data-bs-target="#exampleModalCart">
