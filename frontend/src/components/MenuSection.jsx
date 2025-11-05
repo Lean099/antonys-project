@@ -109,7 +109,7 @@ const PRODUCTS = [
     price: 8500,
     desc: 'Salsa, mozzarella y queso roquefort.',
     image:
-      'https://paulacasero.com.ar/wp-content/uploads/2021/07/paulacasero-225.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/11/75/fa/cd/pizza-de-roquefort-en.jpg',
   },
   {
     id: 'pz-calabresa',

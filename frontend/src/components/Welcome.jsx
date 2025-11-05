@@ -2,30 +2,35 @@ import logo from '../assets/logo.png';
 
 const Welcome = () => {
   return (
-    <>
-      <div class="col-10 mx-auto p-5">
-        <p class="fs-1 fw-bold text-dark">
-          Sabor autentico,
+    <div className="container my-5">
+      <div className="text-center">
+        <p className="fs-1 fw-bold text-dark mb-4">
+          Sabor auténtico,
           <br /> entregado caliente.
         </p>
+
+        {/* Imagen con tamaño adaptable */}
         <img
           src={logo}
-          alt=""
-          class="d-block mx-auto"
-          style={{ width: '400px' }}
+          alt="Logo"
+          className="img-fluid mx-auto d-block"
+          style={{ maxWidth: '400px', height: 'auto' }}
         />
-        <p class="fw-light mt-3 text-dark">
-          Hamburguesas jugosas, sandwiches artesanales y pizzas de masa
-          crujiente. Pedi facil, paga al recibir o en el local
+
+        <p className="fw-light mt-4 text-dark px-3 px-md-5">
+          Hamburguesas jugosas, sándwiches artesanales y pizzas de masa
+          crujiente. Pedí fácil, pagá al recibir o en el local.
         </p>
-        <div class="d-flex justify-content-evenly">
-          <button class="btn btn-sm btn-dark">
-            Ver menu <i class="ms-1 fas fa-arrow-right"></i>
+
+        {/* Botones responsivos */}
+        <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mt-4">
+          <button className="btn btn-dark btn-sm">
+            Ver menú <i className="ms-1 fas fa-arrow-right"></i>
           </button>
-          <button class="btn btn-sm btn-dark">Horarios y sucursales</button>
+          <button className="btn btn-dark btn-sm">Horarios y sucursales</button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
