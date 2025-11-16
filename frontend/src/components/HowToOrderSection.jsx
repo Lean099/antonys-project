@@ -62,9 +62,9 @@ const HowToOrderSection = () => {
         </div>
 
         <div className="mt-5">
-          <a href="#menu" className="btn btn-dark btn-lg px-4 me-2">
+          {/*<a href="#menu" className="btn btn-dark btn-lg px-4 me-2">
             Ver menú
-          </a>
+          </a>*/}
           <a
             href="https://wa.me/5493865000000"
             target="_blank"

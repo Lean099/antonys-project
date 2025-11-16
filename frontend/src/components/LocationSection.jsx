@@ -136,9 +136,9 @@ const LocationsSection = () => {
             </div>
 
             <div className="mt-3 d-flex gap-2">
-              <a href="#menu" className="btn btn-dark">
+              {/*<a href="#menu" className="btn btn-dark">
                 Ver menú
-              </a>
+              </a>*/}
               <a
                 href={mapsLink}
                 target="_blank"

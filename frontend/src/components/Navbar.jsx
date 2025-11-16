@@ -6,6 +6,7 @@ import LoginSection from './LoginSection';
 import RegisterSection from './RegisterSection';
 import CartSection from './CartSection';
 import UserProfileModal from "./UserProfileModal";
+import UserOrdersModal from "./userOrderModal";
 
 const Navbar = () => {
   const [usuario, setUsuario] = useState(null);
@@ -50,7 +51,7 @@ const Navbar = () => {
             {/* Si NO hay usuario */}
             {!usuario ? (
               <div className="ms-lg-3 d-flex flex-column flex-lg-row gap-2">
-                <button className="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModalLogin">
+                <button className="btn btn-outline-dark" id="btnOpenLoginModal" data-bs-toggle="modal" data-bs-target="#exampleModalLogin">
                   Inicio de sesión
                 </button>
                 <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalRegister">
@@ -67,30 +68,32 @@ const Navbar = () => {
               </div>
 
               <button
-                className="btn btn-outline-dark btn-sm ms-3"
+                className="btn btn-outline-dark btn-sm ms-2"
                 data-bs-toggle="modal"
                 data-bs-target="#modalUserProfile"
               >
                 ⚙ Mi cuenta
               </button>
+
+              <UserOrdersModal usuario={usuario} />
               
             </>
             )}
 
-            {/* Carrito */}
+            {/* Carrito 
             <button className="btn btn-dark position-relative ms-3" data-bs-toggle="modal" data-bs-target="#exampleModalCart">
               <i className="fas fa-shopping-cart"></i> Carrito
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 2
               </span>
-            </button>
+            </button>*/}
           </div>
         </div>
       </nav>
 
       <LoginSection />
       <RegisterSection />
-      <CartSection />
+      {/*<CartSection />*/}
       <UserProfileModal usuario={usuario} />
     </>
   );

@@ -1,8 +1,14 @@
 from fastapi import APIRouter, HTTPException
 from database import get_connection
+from pydantic import BaseModel
 
 router = APIRouter(prefix="/pedidos", tags=["Pedidos"])
 
+class PedidoSchema(BaseModel):
+    id_usuario: int
+    total: float
+    productos_json: str
+    estado: str
 
 @router.get("/")
 def obtener_pedidos():
@@ -19,16 +25,19 @@ def obtener_pedidos():
 
 
 @router.post("/")
-def crear_pedido(id_usuario: int, total: float, productos_json: str, estado: str):
+def crear_pedido(data: PedidoSchema):
     try:
         conn = get_connection()
         cursor = conn.cursor()
+
         cursor.execute("""
             INSERT INTO pedidos (id_usuario, total, productos_json, estado)
             VALUES (?, ?, ?, ?)
-        """, (id_usuario, total, productos_json, estado))
+        """, (data.id_usuario, data.total, data.productos_json, data.estado))
+
         conn.commit()
         conn.close()
+
         return {"message": "Pedido creado"}
     except Exception as e:
         raise HTTPException(500, f"Error al crear pedido: {e}")
@@ -60,3 +69,22 @@ def eliminar_pedido(id_pedido: int):
         return {"message": "Pedido eliminado"}
     except Exception as e:
         raise HTTPException(500, f"Error al eliminar pedido: {e}")
+    
+
+@router.get("/usuario/{id_usuario}")
+def obtener_pedidos_usuario(id_usuario: int):
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM pedidos WHERE id_usuario = ?", (id_usuario,))
+        rows = cursor.fetchall()
+
+        # Obtener nombres de columnas para convertir a dict
+        columns = [col[0] for col in cursor.description]
+        pedidos = [dict(zip(columns, row)) for row in rows]
+
+        conn.close()
+        return pedidos
+
+    except Exception as e:
+        raise HTTPException(500, f"Error al obtener pedidos: {e}")

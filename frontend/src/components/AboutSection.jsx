@@ -35,10 +35,10 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="mt-3">
+            {/*<div className="mt-3">
               <button className="btn btn-dark me-2">Ver menú</button>
               <button className="btn btn-outline-dark">Contacto</button>
-            </div>
+            </div>*/}
           </div>
 
           <div className="col-md-6">
